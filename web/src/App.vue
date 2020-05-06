@@ -31,7 +31,7 @@ export default {
   },
   mounted(){
     const myIp = window.location.host.split(':')[0]
-    this.socket = io.connect(`http://${myIp}:5000`)
+    this.socket = io.connect(`http://${myIp}:5500`)
     this.socket.on('message', db=>{
       this.list = db
     })
@@ -63,6 +63,7 @@ html,body { height: 100%; width: 100%; }
   place-items: center;
   overflow-y: auto;
   overflow-x: hidden;
+  text-align: center;
 
   ul,li {
     list-style-type: none;
