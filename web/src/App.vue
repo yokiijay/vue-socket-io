@@ -30,7 +30,8 @@ export default {
     }
   },
   mounted(){
-    this.socket = io.connect('http://192.168.1.187:5000')
+    const myIp = window.location.host.split(':')[0]
+    this.socket = io.connect(`http://${myIp}:5000`)
     this.socket.on('message', db=>{
       this.list = db
     })
